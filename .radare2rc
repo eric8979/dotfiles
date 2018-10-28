@@ -1,0 +1,16 @@
+e scr.color=true
+e scr.utf8=true
+e asm.relsub=true # replace the mnemonic RIP-relative addressing with the target function name
+eco solarized
+e cfg.fortunes.type = fun,tips,nsfw
+e scr.utf8.curvy=true
+e dbg.slow=true
+e asm.shortcut=0 # hotkey hints on the left instead of in comments
+e asm.offset=true
+e asm.bbline=true
+e asm.cmt.right=true
+e graph.cmtright=true
+e asm.lines=true
+e asm.bytes=true
+e asm.size=true
+$dec=#!pipe nodejs /home/r2/.local/share/radare2/r2pm/git//r2retdec/r2retdec.js

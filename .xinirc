@@ -1,0 +1,29 @@
+#!/bin/sh
+
+xsetroot -solid black
+xsetroot -cursor_name top_left_arrow
+
+xset s off
+xset dpms 300 600 900
+
+xmodmap $HOME/.Xmodmap
+
+xrdb -load $HOME/.Xdefaults
+
+ivman &
+
+# gnome keyring daemon (not sure if this will work)
+gnome-keyring-daemon --start
+
+# disable trackpad while typing
+syndaemon -i 0.6 -d
+
+# don't blank the screen
+xset -dpms
+xset s off
+xset s noblank
+
+# Put computer to sleep when idle
+xautolock -detectsleep -time 20 -locker "dm-tool lock; sudo /usr/sbin/pm-suspend" &
+
+exec awesome

@@ -1,0 +1,9 @@
+auto-save-list
+elpa
+*~
+recentf
+projectile-bookmarks.eld
+projectile.cache
+ido.last
+my-config.el
+config/nvim/plugged
