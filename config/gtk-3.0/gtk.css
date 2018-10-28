@@ -1,0 +1,70 @@
+.header-bar.default-decoration {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.header-bar.default-decoration .button.titlebutton {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* No line below the title bar */
+.ssd .titlebar {
+    border-width: 2px;
+    box-shadow: none;
+}
+
+window.ssd headerbar.titlebar {
+    border: none;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.05),
+                                      shade(@theme_bg_color, 0.99));
+    box-shadow: inset 0 1px shade(@theme_bg_color, 1.4);
+}
+
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-top: 2px; /* same as headerbar side padding for nicer proportions */
+    margin-bottom: 2px;
+}
+
+.default-decoration {
+    min-height: 0; /* let the entry and button drive the titlebar size */
+    padding: 2px
+}
+
+.default-decoration .titlebutton {
+    min-height: 26px; /* tweak these two props to reduce button size */
+    min-width: 26px;
+}
+
+/* Terminal mods */
+@define-color bg-grey #222;
+@define-color active-grey #333;
+@define-color border-grey #555;
+
+TerminalWindow .notebook {
+    border: 0;
+    padding: 0;
+    color: #eee;
+    /* background-color: shade(@active-grey, 1); */
+}
+
+TerminalWindow .notebook tab:active {
+    border: 1px ;/* @border-grey;*/
+    background-color: shade(@active-grey, 1);
+}
+
+TerminalWindow .notebook tab {
+    border: 1px ;/* @border-grey;*/
+    background-color: shade(@bg-grey, 1);
+}
+
+TerminalWindow .notebook .button,
+TerminalWindow .notebook .button:active {
+    padding: 1 1 1 10;
+    background-image: none;
+    border: 0;
+}

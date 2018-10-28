@@ -1,0 +1,21 @@
+#!/bin/bash
+
+while [ ! -f /tmp/decompiled.py ]
+do
+  sleep 1
+done
+echo "Working..."
+
+echo "" > /tmp/decompiled.py
+OUT=`cat /tmp/decompiled.py`
+while [ -z "$OUT" ]
+do
+	sleep 1
+	OUT=`cat /tmp/decompiled.py`
+done
+
+tail -n+3 /tmp/decompiled.py > /tmp/decompiled_stripped.py
+
+$EDITOR /tmp/decompiled_stripped.py
+rm -f /tmp/decompiled.py
+rm -f /tmp/decompiled_stripped.py

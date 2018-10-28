@@ -1,0 +1,54 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "vim.leader": "<Space>",
+    "vim.otherModesKeyBindings": [
+        {
+            "before": ["g", "s"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["g", "q"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<Control>-w", "v"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditor",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "workbench.colorTheme": "Darcula Theme from IntelliJ",
+    "editor.lineNumbers": "relative",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 12,
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
+}
