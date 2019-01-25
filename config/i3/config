@@ -40,7 +40,8 @@ floating_modifier $mod
 bindsym $mod+Return exec xterm
 
 # start thunar
-bindsym $mod+t exec thunar
+# bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus --no-desktop
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -199,10 +200,10 @@ for_window [class="Transmission"] floating enable, resize set 640 640
 focus_follows_mouse no
 
 # set dpi for i3
-exec xrandr --dpi 192
+exec --no-startup-id xrandr --dpi 192
 
 # rebind keys
-exec_always setxkbmap -eption ctrl:nocaps
+exec_always --no-startup-id setxkbmap -eption ctrl:nocaps
 
 # set wallaper
 exec --no-startup-id nitrogen --restore
