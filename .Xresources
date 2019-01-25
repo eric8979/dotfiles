@@ -1,3 +1,13 @@
+! Fonts {{{
+xft.antialias: true
+xft.hinting: true
+xft.autohint: false
+xft.rgba: rgb
+xft.hintstyle: hintfull
+xft.dpi: 192
+xft.lcdfilter: lcddefault
+! }}}
+
 !xterm color scheme:
 
 xterm*termName: xterm-color

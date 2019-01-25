@@ -134,7 +134,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "pkill i3-nagbar; i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen
 bindsym $mod+shift+x exec sh ~/.config/i3/i3lock.sh ~/Pictures/Wallpapers/lockscreen.png ~/.config/i3/lock.png
@@ -198,10 +198,13 @@ for_window [class="Transmission"] floating enable, resize set 640 640
 # disable mouse focus
 focus_follows_mouse no
 
-# rebind keys
-exec_always setxkbmap -option ctrl:nocaps
+# set dpi for i3
+exec xrandr --dpi 192
 
-# set wallpaper
+# rebind keys
+exec_always setxkbmap -eption ctrl:nocaps
+
+# set wallaper
 exec --no-startup-id nitrogen --restore
 
 # start compton
@@ -209,3 +212,4 @@ exec --no-startup-id nitrogen --restore
 
 # nm-applet
 exec --no-startup-id nm-applet
+
