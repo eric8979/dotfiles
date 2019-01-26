@@ -195,8 +195,10 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
 
+# Disable window title bar so i3 gaps works
 for_window [class="^.*"] border pixel 5
 
+# Configure i3 gaps
 gaps inner 20
 gaps outer 10
 gaps horizontal 20
