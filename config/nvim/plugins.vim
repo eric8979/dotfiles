@@ -27,7 +27,6 @@ if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	" This makes deoplete work with vim-go etc
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
-
 else
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
