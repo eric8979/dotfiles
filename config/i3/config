@@ -39,7 +39,7 @@ set $urgent-bg-color     #E53935
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+Return exec unset SESSION_MANAGER && xterm
 
 # start thunar
 # bindsym $mod+t exec thunar
@@ -166,8 +166,8 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master unmute 10%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master unmute 10%+
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # window colors
 #                       border              background         text                 indicator

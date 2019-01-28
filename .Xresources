@@ -8,6 +8,14 @@ xft.dpi: 192
 xft.lcdfilter: lcddefault
 ! }}}
 
+!xterm fonts:
+
+xterm*font: xft:Monospace Regular:size=11, xft:Font Awesome:size=11:minspace=False
+! xterm*faceName: Monospace Regular
+! xterm*faceSize: 11
+! xterm*renderFont: true
+! xterm*minspace: false
+
 !xterm color scheme:
 
 xterm*termName: xterm-color
@@ -41,12 +49,6 @@ xterm*color14 : #34E2E2
 ! white
 xterm*color7  : #D3D7CF
 xterm*color15 : #EEEEEC
-
-!xterm fonts:
-
-xterm*faceName: Monospace Regular
-xterm*faceSize: 11
-xterm*renderFont: true
 
 !xterm other:
 
