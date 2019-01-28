@@ -17,6 +17,10 @@ noremap gn :noh<CR>
 map ge :NERDTreeToggle<CR>
 noremap gb :b#<CR>
 
+" Navigate wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Exit insert mode
 inoremap kj <Esc>
 inoremap jk <Esc>
