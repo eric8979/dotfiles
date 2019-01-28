@@ -39,7 +39,7 @@ set $urgent-bg-color     #E53935
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec --no-startup-id xterm
 
 # start thunar
 # bindsym $mod+t exec thunar
@@ -48,14 +48,7 @@ bindsym $mod+t exec nautilus --no-desktop
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# use rofi instead of dmenu
+# start rofi
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -p "" -i -show run -lines 5 -eh 2 -width 60 -padding 20 -opacity "85" -bw 0 -bc "$bar-bg-color" -bg "$bar-bg-color" -fg "$text-color" -hlbg "$bar-bg-color" -hlfg "#9575cd" -font "System San Francisco Display 16"'
 
 # change focus
@@ -141,7 +134,7 @@ bindsym $mod+Shift+e exec "pkill i3-nagbar; i3-nagbar -t warning -m 'You pressed
 
 # lock screen
 bindsym $mod+shift+x exec sh ~/.config/i3/i3lock.sh ~/Pictures/Wallpapers/lockscreen.png ~/.config/i3/lock.png
-bindsym --release Print exec scrot -s '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
+bindsym --release Print exec --no-startup-id scrot -s '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -170,9 +163,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # function keys (works for thinkpad t580)
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master unmute 10%-
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master unmute 10%+
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master unmute 10%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master unmute 10%+
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness.sh down
 
 # window colors
 #                       border              background         text                 indicator
