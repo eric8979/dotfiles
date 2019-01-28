@@ -169,6 +169,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# function keys (works for thinkpad t580)
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master unmute 10%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master unmute 10%+
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $bg-color
@@ -176,24 +181,8 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	 colors {
-			# Whole color settings
-			background $bar-bg-color
-			statusline #ffffff
-			separator  #757575
-
-			# Type             border  background font
-			focused_workspace  $bar-bg-color          $bar-bg-color          $text-color
-			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-		}
-		position bottom
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-}
+# Start polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Disable window title bar so i3 gaps works
 for_window [class="^.*"] border pixel 5
