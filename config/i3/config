@@ -39,7 +39,7 @@ set $urgent-bg-color     #E53935
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec unset SESSION_MANAGER && xterm
+bindsym $mod+Return exec --no-startup-id unset SESSION_MANAGER && xterm
 
 # start thunar
 # bindsym $mod+t exec thunar
