@@ -23,9 +23,6 @@ font pango:System San Fransisco Display 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# thin borders
-# hide_edge_borders both
-
 # define colors
 set $bg-color 	         #ffffff
 set $bar-bg-color   #2f343f
@@ -180,17 +177,13 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Disable window title bar so i3 gaps works
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 3
 
 # Configure i3 gaps
-gaps inner 20
-gaps outer 10
-gaps horizontal 20
-gaps vertical 20
-gaps top 10
-gaps right 10
-gaps bottom 10
-gaps left 10
+gaps inner 10
+gaps outer 5 
+smart_borders on
+hide_edge_borders smart_no_gaps
 
 # Rules for specific applications
 for_window [class="Transmission"] floating enable, resize set 640 640
