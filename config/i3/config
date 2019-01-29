@@ -131,6 +131,14 @@ bindsym $mod+Shift+e exec "pkill i3-nagbar; i3-nagbar -t warning -m 'You pressed
 
 # lock screen
 bindsym $mod+shift+x exec sh ~/.config/i3/i3lock.sh ~/Pictures/Wallpapers/lockscreen.png ~/.config/i3/lock.png
+
+# lock screen after 15 mins inactivity
+exec_always --no-startup-id sh pkill xautolock; xautolock -time 10 -locker '~/.config/i3/i3lock.sh ~/Pictures/Wallpapers/lockscreen.png ~/.config/i3/lock.png'
+
+# prevent screen from locking when fullscreen app is open
+exec_always --no-startup-id pkill caffeine; caffeine
+
+# screenshot
 bindsym --release Print exec --no-startup-id scrot -s '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 
 # resize window (you can also use the mouse for that)
@@ -190,6 +198,9 @@ for_window [class="Transmission"] floating enable, resize set 640 640
 
 # disable mouse focus
 focus_follows_mouse no
+
+# enable tap to click on mousepad
+exec --no-startup-id xinput set-prop 11 278 1
 
 # set dpi for i3
 exec --no-startup-id xrandr --dpi 192
