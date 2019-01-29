@@ -1,0 +1,10 @@
+rofi.dpi: 192
+rofi.lines: 5
+rofi.theme: solarized
+rofi.padding: 20
+rofi.width: 60
+rofi.eh: 2
+rofi.opacity: 85
+rofi.bw: 0
+rofi.font: System San Francisco 12
+
