@@ -196,6 +196,9 @@ hide_edge_borders smart_no_gaps
 # Rules for specific applications
 for_window [class="Transmission"] floating enable, resize set 640 640
 
+# start xss-lock to lock screen when lid closes
+exec_always --no-startup-id "pkill xss-lock; xss-lock -- ~/.config/i3/i3lock.sh ~/Pictures/Wallpapers/lockscreen.png ~/.config/i3/lock.png"
+
 # disable mouse focus
 focus_follows_mouse no
 
