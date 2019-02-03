@@ -212,8 +212,7 @@ exec --no-startup-id xrandr --dpi 192
 exec_always --no-startup-id setxkbmap -eption ctrl:nocaps
 
 # set random wallaper
-exec_always --no-startup-id ~/.local/bin/randomize-wallpaper.sh
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.local/bin/randomize-wallpaper.sh && nitrogen --restore
 
 # start compton
 # exec --no-startup-id /usr/bin/compton -f
