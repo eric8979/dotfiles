@@ -52,6 +52,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = FontAwesome:size=12;0
+font-3 = Symbola:size=12;0
 
 modules-left = i3
 modules-right = filesystem backlight battery0 battery1 pulseaudio wlan date 
@@ -69,7 +70,7 @@ type = internal/fs
 ; Mountpoints to display
 mount-0 = /
 
-label-mounted = HDD %mountpoint%: %free%
+label-mounted =  💾  %free%
 
 ; Seconds to sleep between updates
 ; Default: 30
