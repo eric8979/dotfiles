@@ -104,6 +104,10 @@ label-focused-padding = 2
 label-unfocused = %name%
 label-unfocused-padding = 2
 
+label-visible-padding = 2
+
+label-urgent-padding = 2
+label-urgent-foreground = #f44242
 
 
 [module/backlight]
