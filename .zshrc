@@ -97,6 +97,8 @@ export EDITOR=vim
 alias x=exit
 alias l=ls
 alias c=clear
+alias dotfiles="cd ~/Documents/dotfiles"
+alias dockerfiles="cd ~/Development/dockerfiles"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
