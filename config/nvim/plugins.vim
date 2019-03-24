@@ -10,7 +10,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'davidhalter/jedi-vim'
-Plug 'nsf/gocode', {'rtp': 'vim/'}
 Plug 'tpope/vim-surround'
 
 " Plugins that are neater in their own file

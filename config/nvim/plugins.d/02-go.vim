@@ -1,3 +1,4 @@
+Plug 'nsf/gocode', {'rtp': 'vim/'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 if !exists("autocommand_gobuild")
