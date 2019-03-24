@@ -1,4 +1,3 @@
-let mapleader=" "
 syntax on
 
 " Theme
