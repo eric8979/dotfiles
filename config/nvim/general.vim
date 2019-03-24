@@ -14,6 +14,9 @@ hi StatusLineNC ctermbg=blue ctermfg=8
 " Remove color from matching parenthesis
 hi MatchParen cterm=underline ctermbg=none ctermfg=none
 
+" Allow modifications to hidden buffers (for refactor->rename)
+set hidden
+
 " Disable mouse
 set mouse=""
 
