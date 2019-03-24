@@ -5,71 +5,17 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Plugins that don't need extra config
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'davidhalter/jedi-vim'
 Plug 'nsf/gocode', {'rtp': 'vim/'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 
-Plug 'airblade/vim-gitgutter'
-let g:gitgutter_sign_added = '++'
-let g:gitgutter_sign_modified = '~~'
-let g:gitgutter_sign_removed = '--'
-let g:gitgutter_sign_removed_first_line = '-^'
-let g:gitgutter_sign_modified_removed = '-~'
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-if !exists("autocommand_gobuild")
-	let autocommand_gobuild = 1
-	autocmd BufWritePre *.go :GoBuild
-endif
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-"   set cacheDirectory to /var/cquery may cause permission problem on linux
-"   set it to /tmp/cquery/ can fix it
-let g:LanguageClient_serverCommands = {
-\ 'cpp': ['~/Software/cquery/build/cquery', 
-\   '--log-file=/tmp/cq.log', 
-\   '--init={"cacheDirectory":"/tmp/cquery/"}'
-\ ],
-\ 'c': ['~/Software/cquery/build/cquery', 
-\   '--log-file=/tmp/cq.log', 
-\   '--init={"cacheDirectory":"/tmp/cquery/"}'
-\ ],
-\ }
-" Use an absolute configuration path if you want system-wide settings
-" let g:LanguageClient_settingsPath = '/home/yourusername/.config/nvim/settings.json'
-
-" Autocompletion
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	" This makes deoplete work with vim-go etc
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
-	" This makes deoplete work with vim-go etc
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
-endif
-
-if !exists('g:deoplete#omni#input_patterns')
-	let g:deoplete#omni#input_patterns = {}
-endif
-
-let g:deoplete#enable_at_startup = 1
-
-if !exists("autocommand_insertleave")
-	let autocommand_insertleave = 1
-	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-endif
+" Plugins that are neater in their own file
+for f in split(glob('~/.config/nvim/plugins.d/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 call plug#end()

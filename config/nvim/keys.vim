@@ -5,17 +5,8 @@ noremap gs :w<CR>
 nnoremap <leader>g :Ag<space>
 nnoremap <silent> <leader>c :copen<CR>
 
-" Fuzzy finder
-noremap <silent> <C-p> :FZF -m<CR>
-noremap <silent> <leader>b :Buffers<CR>
-noremap <silent> <leader>h :History<CR>
-
 " Remove search higligting
 noremap gn :noh<CR>
-
-" Navigation
-map ge :NERDTreeToggle<CR>
-noremap gb :b#<CR>
 
 " Navigate wrapped lines
 nnoremap j gj
@@ -35,14 +26,3 @@ nnoremap <leader>e :call EditVimrc()<CR>
 " Yank into clipboard
 noremap gy "+y
 
-" LanguageClient stuff
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-" Jump to next/prev git hunks
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
