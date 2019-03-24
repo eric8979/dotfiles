@@ -13,5 +13,4 @@ e graph.cmtright=true
 e asm.lines=true
 e asm.bytes=true
 e asm.size=true
-ec graph.box2 white
 $dec=#!pipe nodejs /home/r2/.local/share/radare2/r2pm/git//r2retdec/r2retdec.js
