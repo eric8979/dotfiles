@@ -22,6 +22,26 @@ if !exists("autocommand_gobuild")
 	autocmd BufWritePre *.go :GoBuild
 endif
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+"   set cacheDirectory to /var/cquery may cause permission problem on linux
+"   set it to /tmp/cquery/ can fix it
+let g:LanguageClient_serverCommands = {
+\ 'cpp': ['~/Software/cquery/build/cquery', 
+\   '--log-file=/tmp/cq.log', 
+\   '--init={"cacheDirectory":"/tmp/cquery/"}'
+\ ],
+\ 'c': ['~/Software/cquery/build/cquery', 
+\   '--log-file=/tmp/cq.log', 
+\   '--init={"cacheDirectory":"/tmp/cquery/"}'
+\ ],
+\ }
+" Use an absolute configuration path if you want system-wide settings
+" let g:LanguageClient_settingsPath = '/home/yourusername/.config/nvim/settings.json'
+
 " Autocompletion
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
