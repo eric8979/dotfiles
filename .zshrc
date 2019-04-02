@@ -103,7 +103,7 @@ alias dockerfiles="cd ~/Development/dockerfiles"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export GOROOT=/usr/local/go
+export GOROOT=/usr/lib/go
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
