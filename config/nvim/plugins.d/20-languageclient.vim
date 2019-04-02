@@ -6,7 +6,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 "   set cacheDirectory to /var/cquery may cause permission problem on linux
 "   set it to /tmp/cquery/ can fix it
 let g:LanguageClient_serverCommands = {
-			\ 'go': ['/home/scrappy/Development/go/bin/gopls'],
+			\ 'go': ['~/Development/go/bin/gopls'],
 			\ 'cpp': ['~/Software/cquery/build/cquery', 
 			\   '--log-file=/tmp/cq.log', 
 			\   '--init={"cacheDirectory":"/tmp/cquery/"}'
