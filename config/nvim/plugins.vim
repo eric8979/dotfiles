@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
 
 " Plugins that are neater in their own file
 for f in split(glob('~/.config/nvim/plugins.d/*.vim'), '\n')
