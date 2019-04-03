@@ -107,6 +107,8 @@ export GOROOT=/usr/lib/go
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+export PATH=$PATH:~/.npm-global/bin
+
 cutter() {
 	mkdir -p ~/.config/radare2
 	mkdir -p ~/.local/share/radare2/projects
