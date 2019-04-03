@@ -15,7 +15,10 @@ let g:LanguageClient_serverCommands = {
 			\   '--log-file=/tmp/cq.log', 
 			\   '--init={"cacheDirectory":"/tmp/cquery/"}'
 			\ ],
+			\ 'typescript': ['javascript-typescript-stdio'],
+			\ 'javascript': ['javascript-typescript-stdio'],
 			\ }
+
 " Use an absolute configuration path if you want system-wide settings
 " let g:LanguageClient_settingsPath = '/home/yourusername/.config/nvim/settings.json'
 
