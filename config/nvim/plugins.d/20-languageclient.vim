@@ -6,7 +6,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 "   set cacheDirectory to /var/cquery may cause permission problem on linux
 "   set it to /tmp/cquery/ can fix it
 let g:LanguageClient_serverCommands = {
-			\ 'go': ['~/Development/go/bin/gopls'],
+			\ 'go': ['gopls'],
 			\ 'cpp': ['~/Software/cquery/build/cquery', 
 			\   '--log-file=/tmp/cq.log', 
 			\   '--init={"cacheDirectory":"/tmp/cquery/"}'
@@ -25,7 +25,7 @@ let g:LanguageClient_serverCommands = {
 " Allow modifications to hidden buffers (for refactor->rename)
 set hidden
 
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 " Keybinds 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
