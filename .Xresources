@@ -1,11 +1,12 @@
 ! Fonts {{{
-xft.antialias: true
-xft.hinting: true
-xft.autohint: false
-xft.rgba: rgb
-xft.hintstyle: hintfull
+Xft.antialias: true
+Xft.hinting: true
+Xft.autohint: false
+Xft.rgba: rgb
+Xft.hintstyle: hintfull
+Xft.dpi: 192
 xft.dpi: 192
-xft.lcdfilter: lcddefault
+Xft.lcdfilter: lcddefault
 ! }}}
 
 !xterm fonts:
