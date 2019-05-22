@@ -40,7 +40,7 @@ bindsym $mod+Return exec --no-startup-id unset SESSION_MANAGER && xterm
 
 # start thunar
 # bindsym $mod+t exec thunar
-bindsym $mod+t exec GDK_SCALE= nautilus --no-desktop
+bindsym $mod+t exec nautilus --no-desktop
 
 # kill focused window
 bindsym $mod+Shift+q kill
