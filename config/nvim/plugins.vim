@@ -11,7 +11,6 @@ Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive' " Git tools
 Plug 'leafgarland/typescript-vim'
 Plug 'diepm/vim-rest-console'
 
