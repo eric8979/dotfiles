@@ -1,7 +1,7 @@
 syntax on
 
 " Theme
-colorscheme spiderhawk
+colorscheme darkburn
 
 " Disable mouse
 set mouse=""
