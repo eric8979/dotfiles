@@ -11,7 +11,6 @@ Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive' " Git tools
 Plug 'leafgarland/typescript-vim'
 Plug 'diepm/vim-rest-console'
 
@@ -21,3 +20,9 @@ for f in split(glob('~/.config/nvim/plugins.d/*.vim'), '\n')
 endfor
 
 call plug#end()
+
+" Evaluate post load plugin code (calling plugin functions etc)
+for f in split(glob('~/.config/nvim/plugins.post.d/*.vim'), '\n')
+    exe 'source' f
+endfor
+
