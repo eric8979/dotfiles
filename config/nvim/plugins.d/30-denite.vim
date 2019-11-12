@@ -1,10 +1,6 @@
 Plug 'Shougo/denite.nvim'
-" === Denite shorcuts === "
-"   ;         - Browser currently open buffers
-"   <leader>t - Browse list of files in current directory
-"   <leader>g - Search current directory for occurences of given term and
-"   close window if no results
-"   <leader>j - Search current directory for occurences of word under cursor
+
+" Keybinds
 noremap <silent> <C-p> :Denite buffer file/rec -split=floating -winrow=1<CR>
 
 " Denite buffer bindings
