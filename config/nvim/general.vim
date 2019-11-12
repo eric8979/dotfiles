@@ -28,8 +28,8 @@ set splitbelow
 set splitright
 
 " Add line numbers (relative)
-:set number
-:set relativenumber
+set number
+set relativenumber
 
 " Highlight results as you search
 set incsearch
