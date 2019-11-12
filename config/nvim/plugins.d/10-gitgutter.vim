@@ -10,6 +10,6 @@ let g:gitgutter_sign_modified_removed = '-~'
 :autocmd BufWritePost * :GitGutter
 
 " Keybinds
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
