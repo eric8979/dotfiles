@@ -4,6 +4,3 @@ autocmd BufNewFile,BufRead *.toml set filetype=config
 autocmd BufNewFile,BufRead *.yml.j2 set filetype=yaml
 autocmd BufNewFile,BufRead *.md,*.txt set linebreak
 
-" q to quit all fugitive buffers
-autocmd BufNewFile,BufRead fugitive://* nnoremap <silent> q :q<CR>
-
