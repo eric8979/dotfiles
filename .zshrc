@@ -99,6 +99,7 @@ alias l=ls
 alias c=clear
 alias dotfiles="cd ~/Documents/dotfiles"
 alias dockerfiles="cd ~/Development/dockerfiles"
+alias tf=terraform
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
