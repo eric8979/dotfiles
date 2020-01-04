@@ -206,9 +206,6 @@ exec_always --no-startup-id "pkill xss-lock; xss-lock -- ~/.config/i3/i3lock.sh 
 # disable mouse focus
 focus_follows_mouse no
 
-# enable tap to click on mousepad
-exec --no-startup-id xinput set-prop 11 278 1
-
 # set dpi for i3
 exec --no-startup-id xrandr --dpi 192
 

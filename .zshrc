@@ -110,29 +110,29 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.npm-global/bin
 
-cutter() {
-	mkdir -p ~/.config/radare2
-	mkdir -p ~/.local/share/radare2/projects
-	mkdir -p ~/.config/Cutter
-	touch ~/.radare2rc
+# cutter() {
+# 	mkdir -p ~/.config/radare2
+# 	mkdir -p ~/.local/share/radare2/projects
+# 	mkdir -p ~/.config/Cutter
+# 	touch ~/.radare2rc
 
-	xhost +local:docker && \
-		docker run \
-		--rm \
-		-it \
-		--name cutter \
-		--net=host \
-		-e DISPLAY=$DISPLAY \
-		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-		-v ~/.radare2rc:/home/r2/.radare2rc:ro \
-		-v ~/.config/radare2:/home/r2/.config/radare2:ro \
-		-v ~/.local/share/radare2/projects:/home/r2/.local/share/radare2/projects \
-		-v ~/.config/Cutter:/home/r2/.config/Cutter \
-		-v ~/Lab/samples:/home/r2/samples:ro \
-		cutter
+# 	xhost +local:docker && \
+# 		docker run \
+# 		--rm \
+# 		-it \
+# 		--name cutter \
+# 		--net=host \
+# 		-e DISPLAY=$DISPLAY \
+# 		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+# 		-v ~/.radare2rc:/home/r2/.radare2rc:ro \
+# 		-v ~/.config/radare2:/home/r2/.config/radare2:ro \
+# 		-v ~/.local/share/radare2/projects:/home/r2/.local/share/radare2/projects \
+# 		-v ~/.config/Cutter:/home/r2/.config/Cutter \
+# 		-v ~/Lab/samples:/home/r2/samples:ro \
+# 		cutter
 
-	xhost -local:docker
-}
+# 	xhost -local:docker
+# }
 
 r2() {
 	docker run \
@@ -162,3 +162,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export TERM=xterm-256color
+
+source ~/.zshrc.post
