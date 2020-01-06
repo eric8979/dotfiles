@@ -163,4 +163,13 @@ export NVM_DIR="$HOME/.nvm"
 
 export TERM=xterm-256color
 
+# http://rgaucher.info/beta/grabber/
+alias grabber="python ~/Software/Grabber/grabber.py"
+
+alias sqlmap="sqlmap --random-agent"
+
+alias nikto="docker run --rm sullo/nikto"
+# To save the report in a specific format, mount /tmp as a volume:
+# docker run --rm -v $(pwd):/tmp sullo/nikto -h http://www.example.com -o /tmp/out.json
+
 source ~/.zshrc.post
