@@ -168,6 +168,8 @@ alias grabber="python ~/Software/Grabber/grabber.py"
 
 alias sqlmap="sqlmap --random-agent"
 
+alias sinkholed="cd ~/Development/sinkholed"
+
 alias nikto="docker run --rm sullo/nikto"
 # To save the report in a specific format, mount /tmp as a volume:
 # docker run --rm -v $(pwd):/tmp sullo/nikto -h http://www.example.com -o /tmp/out.json
