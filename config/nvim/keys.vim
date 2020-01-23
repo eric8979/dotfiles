@@ -2,7 +2,7 @@
 noremap gs :w<CR>
 
 " Searching
-nnoremap <leader>gg :Ag<space>
+nnoremap <leader>a :Ag<space>
 nnoremap <silent> <leader>c :copen<CR>
 
 " Remove search higligting
