@@ -1,6 +1,6 @@
 #!/bin/bash
 
-out=`nmap -p80,443 $1`
+out=`nmap -p80,443 $1 2>/dev/null`
 if [[ "$out" =~ .*/tcp.*open.* ]]; then
   echo $1
 fi
