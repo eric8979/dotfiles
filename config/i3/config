@@ -38,6 +38,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id unset SESSION_MANAGER && xterm
 
+# start spotify
+bindsym $mod+y exec --no-startup-id spotify --force-device-scale-factor=1.8
+
 # start thunar
 # bindsym $mod+t exec thunar
 bindsym $mod+t exec nautilus --no-desktop
