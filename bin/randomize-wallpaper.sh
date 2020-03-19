@@ -9,6 +9,7 @@ if [ "$focused" = "\"eDP-1\"" ]; then
 else
     focused=1
 fi
+focused=0 # disabling main monitor when docked so always screen 0
 echo ".$focused."
 
 N=1
