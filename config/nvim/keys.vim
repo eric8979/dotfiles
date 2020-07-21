@@ -13,8 +13,6 @@ nnoremap j gj
 nnoremap k gk
 
 " Exit insert mode
-inoremap kj <Esc>
-inoremap jk <Esc>
 inoremap <C-c> <Esc>
 
 " Quit buffer
