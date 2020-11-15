@@ -1,5 +1,7 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+let g:coc_global_extensions = ['coc-snippets']
+
 " Keybinds
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>r <Plug>(coc-references)
