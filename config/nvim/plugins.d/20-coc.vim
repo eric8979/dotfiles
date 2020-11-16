@@ -12,6 +12,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc-snippets config
 " ------------------------------------------------------------------------------
+Plug 'honza/vim-snippets'
+
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 

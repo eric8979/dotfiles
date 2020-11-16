@@ -1,5 +1,8 @@
 {
-    "snippets.priority": "300",
+    "snippets.priority": 100,
+    "snippets.loadFromExtensions": false,
+    "snippets.snipmate.enable": false,
+    "snippets.ultisnips.enable": true,
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "gosnippets/UltiSnips"

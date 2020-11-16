@@ -15,7 +15,6 @@ Plug 'diepm/vim-rest-console'
 Plug 'jreybert/vimagit'
 Plug 'pprovost/vim-ps1'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'honza/vim-snippets'
 
 " Plugins that are neater in their own file
 for f in split(glob('~/.config/nvim/plugins.d/*.vim'), '\n')
