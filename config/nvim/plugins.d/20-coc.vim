@@ -1,6 +1,7 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-let g:coc_global_extensions = ['coc-snippets']
+" Ensure the following extensions are installed
+let g:coc_global_extensions = ['coc-snippets', 'coc-python']
 
 " Keybinds
 nmap <silent> <leader>d <Plug>(coc-definition)
@@ -9,6 +10,8 @@ nmap <silent> <leader>j <Plug>(coc-implementation)
 nmap <silent> <F2> <Plug>(coc-rename)
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" coc-snippets config
+" ------------------------------------------------------------------------------
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -18,8 +21,11 @@ inoremap <silent><expr> <TAB>
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 let g:coc_snippet_next = '<tab>'
+" ------------------------------------------------------------------------------

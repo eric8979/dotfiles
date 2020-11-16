@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
-Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
 Plug 'diepm/vim-rest-console'
