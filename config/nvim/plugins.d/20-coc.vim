@@ -1,7 +1,7 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Ensure the following extensions are installed
-let g:coc_global_extensions = ['coc-snippets', 'coc-python']
+let g:coc_global_extensions = ['coc-snippets', 'coc-python', 'coc-yaml', 'coc-json']
 
 " Keybinds
 nmap <silent> <leader>d <Plug>(coc-definition)
