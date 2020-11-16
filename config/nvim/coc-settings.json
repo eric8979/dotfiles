@@ -1,4 +1,9 @@
 {
+    "snippets.priority": "300",
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "gosnippets/UltiSnips"
+    ],
     "languageserver": {
         "terraform": {
             "command": "terraform-lsp",
