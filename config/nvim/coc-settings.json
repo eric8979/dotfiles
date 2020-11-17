@@ -3,6 +3,7 @@
     "snippets.loadFromExtensions": false,
     "snippets.snipmate.enable": false,
     "snippets.ultisnips.enable": true,
+    "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnippets",
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "gosnippets/UltiSnips"
