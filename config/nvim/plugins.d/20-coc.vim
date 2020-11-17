@@ -27,9 +27,6 @@ let g:coc_snippet_next = '<c-j>'
 imap <C-k> <Nop>
 let g:coc_snippet_prev = '<c-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
-
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 " ------------------------------------------------------------------------------
