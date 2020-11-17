@@ -39,3 +39,6 @@ set relativenumber
 " Highlight results as you search
 set incsearch
 
+" Set statusline
+set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)\ 
+set statusline+=%{coc#status()}

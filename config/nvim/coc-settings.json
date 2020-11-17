@@ -4,6 +4,7 @@
     "snippets.snipmate.enable": false,
     "snippets.ultisnips.enable": true,
     "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnippets",
+    "snippets.enableStatusItem": true,
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "gosnippets/UltiSnips"
