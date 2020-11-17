@@ -24,25 +24,44 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet mainlog "Starts a main.go with logrus boilerplate" b
-package main
+snippet gobuild "Create a multistage go build template" b
+FROM golang:1.15.5-alpine3.12 as build
 
-import (
-	log "github.com/sirupsen/logrus"
-)
+ENV GOPATH=""
 
-func main() {
-	$0
-}
+RUN apk add --update --no-cache git build-base bash
+
+RUN mkdir /opt/build
+
+WORKDIR /opt/build
+
+COPY ./$1 $1
+
+RUN go build
+
+FROM alpine:3.12
+
+# Add user and group
+RUN addgroup -S $2 \
+	&& adduser -S $2 -G $2
+
+# Copy required files into image
+COPY --from=build /opt/build/build /usr/local/bin/$3
+
+USER $2
+
+ENTRYPOINT /usr/local/bin/$3
+$0
 endsnippet
 
-snippet implog "Imports logrus" b
-log "github.com/sirupsen/logrus"
+snippet auser "Create an alpine user" b
+# Add user and group
+RUN addgroup -S $1 \
+	&& adduser -S $1 -G $1
+$0
 endsnippet
 
-snippet ci "Changes single line import statement into multiline" b
-import (
-	`!p snip.rv = snip.v.text[7:]`
-	"$0"
-)
+snippet add "Adds an alpine package" b
+RUN apk add --update --no-cache $1
 endsnippet
+
