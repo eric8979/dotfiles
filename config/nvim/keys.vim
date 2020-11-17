@@ -19,7 +19,11 @@ inoremap <C-c> <Esc>
 nnoremap gq :q<CR>
 
 " Open vimrc
-nnoremap <leader>e :call EditVimrc()<CR>
+nnoremap <leader>ee :call EditVimrc()<CR>
+
+" Open snippet file
+nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
+
 
 " Yank into clipboard
 noremap gy "+y
