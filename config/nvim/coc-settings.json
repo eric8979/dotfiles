@@ -6,8 +6,7 @@
     "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnippets",
     "snippets.enableStatusItem": true,
     "snippets.ultisnips.directories": [
-        "UltiSnips",
-        "gosnippets/UltiSnips"
+        "UltiSnips"
     ],
     "languageserver": {
         "terraform": {
