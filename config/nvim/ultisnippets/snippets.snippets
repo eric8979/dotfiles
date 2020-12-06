@@ -23,34 +23,3 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-
-snippet mainlog "Starts a main.go with logrus boilerplate" b
-package main
-
-import (
-	log "github.com/sirupsen/logrus"
-)
-
-func main() {
-	$0
-}
-endsnippet
-
-snippet implog "Imports logrus" b
-log "github.com/sirupsen/logrus"
-endsnippet
-
-snippet ci "Changes single line import statement into multiline" b
-import (
-	`!p snip.rv = snip.v.text[7:]`
-	"$0"
-)
-endsnippet
-
-snippet pugetconf "Gets a variable from pulumi config file" b
-$1, err := conf.Try("$1")
-if err != nil {
-	return error
-}
-endsnippet
-

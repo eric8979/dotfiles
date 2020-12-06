@@ -1,0 +1,85 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet resp "Respond section of LimaCharlie DR rule" b
+respond:
+  - action: report
+    metadata:
+      author: brenton@profero.io
+      description: $1
+      falsepositives:
+        - ${2:unknown}
+      level: ${3:medium}
+      references: 
+        - $4
+    name: $5
+$0
+endsnippet
+
+snippet and "Inserts LC and operation" b
+- op: and
+  rules:
+    $0
+endsnippet
+
+snippet or "Inserts LC or operation" b
+- op: or
+  rules:
+    $0
+endsnippet
+
+snippet is "Inserts LC is operation" b
+- op: is
+  path: detect/event/${1:FILE_NAME}
+  value: $2
+  case sensitive: ${3:false}
+$0
+endsnippet
+
+snippet startswith "Inserts LC starts with operation" b
+- op: starts with
+  path: detect/event/${1:FILE_NAME}
+  value: $2
+  case sensitive: ${3:false}
+$0
+endsnippet
+
+snippet endswith "Inserts LC ends with operation" b
+- op: ends with
+  path: detect/event/${1:FILE_NAME}
+  value: $2
+  case sensitive: ${3:false}
+$0
+endsnippet
+
+snippet detect "Inserts LC detect snippet" b
+detect:
+  events:
+    - ${1:EXISTING_PROCESS}
+  op: ${2:or}
+  rules:
+    $0
+endsnippet
