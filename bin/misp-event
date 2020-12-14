@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+
+import pymisp
+import sys
+import os
+import argparse
+from pprint import pprint
+
+
+ALLOWED_ATTRIB_TYPES=["ip-dst", "ip-src", "domain", "sha256", "md5"]
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Create and publish a new misp event using attributes from stdin",
+            epilog="Requires a MISP_API_KEY and MISP_API_ENDPOINT env variables")
+    parser.add_argument("-i", "--info", help="The event info")
+    parser.add_argument("-t", "--type", help="One of ip,domain,sha256,md5")
+
+    args = parser.parse_args()
+
+    # Check args
+    if args.info == None:
+        print("Please supply --info")
+        parser.print_help()
+        sys.exit(1)
+        
+    if args.type == None:
+        print("Please supply --type")
+        parser.print_help()
+        sys.exit(1)
+
+    if not args.type in ALLOWED_ATTRIB_TYPES:
+        print("Please supply a supported attribute type")
+        parser.print_help()
+        sys.exit(1)
+
+    if not "MISP_API_ENDPOINT" in os.environ:
+        print("Please set the MISP_API_ENDPOINT env variable")
+        parser.print_help()
+        sys.exit(1)
+
+    if not "MISP_API_KEY" in os.environ:
+        print("Please set the MISP_API_KEY env variable")
+        parser.print_help()
+        sys.exit(1)
+
+    # Create event
+    misp = pymisp.PyMISP(os.environ["MISP_API_ENDPOINT"], os.environ["MISP_API_KEY"])
+    
+    event = pymisp.MISPEvent()
+    event.info = args.info
+    event.distribution = 1 # Only share with this community
+    # event.add_tag("sometag")
+
+    for line in sys.stdin:
+        attrib = pymisp.MISPAttribute()
+        attrib.type = args.type
+        attrib.value = line.strip()
+
+        if args.type.startswith("ip") or args.type == "domain":
+            attrib.category = "Network activity"
+
+        if args.type in ["sha256", "md5"]:
+            attrib.category = "Artifacts dropped"
+
+        event.attributes.append(attrib)
+
+    print("Creating event with {} attributes".format(len(event.attributes)))
+    event = misp.add_event(event)
+    misp.publish(event)
+
+    print(os.environ["MISP_API_ENDPOINT"] + "/events/view/" + str(event["Event"]["id"]))
+
+if __name__ == "__main__":
+    main()

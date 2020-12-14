@@ -51,6 +51,25 @@ snippet or "Inserts LC or operation" b
     $0
 endsnippet
 
+global !p
+def eventAttribComplete(t):
+	with open("/tmp/log", "w") as f:
+		f.write(t + "\n")
+	opts = ["FILE_PATH", "COMMAND_LINE", "PARENT/FILE_PATH", "PARENT/COMMAND_LINE"]
+	if t:
+		opts = [ m[len(t):] for m in opts if m.startswith(t) ]
+	if len(opts) == 1:
+		return opts[0]
+	return "(" + "|".join(opts) + ")"
+endglobal
+
+# snippet is "Inserts LC is operation" b
+# - op: is
+#   path: detect/event/$1`!p snip.rv=eventAttribComplete(t[1])`
+#   value: $2
+#   case sensitive: ${3:false}
+# $0
+# endsnippet
 snippet is "Inserts LC is operation" b
 - op: is
   path: detect/event/${1:FILE_NAME}
@@ -78,8 +97,9 @@ endsnippet
 snippet detect "Inserts LC detect snippet" b
 detect:
   events:
-    - ${1:EXISTING_PROCESS}
-  op: ${2:or}
+    - EXISTING_PROCESS
+  op: ${1:or}
   rules:
     $0
 endsnippet
+
