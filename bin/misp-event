@@ -14,7 +14,7 @@ def main():
     parser = argparse.ArgumentParser(description="Create and publish a new misp event using attributes from stdin",
             epilog="Requires a MISP_API_KEY and MISP_API_ENDPOINT env variables")
     parser.add_argument("-i", "--info", help="The event info")
-    parser.add_argument("-t", "--type", help="One of ip,domain,sha256,md5")
+    parser.add_argument("-t", "--type", help="One of ip-src,ip-dst,domain,sha256,md5")
 
     args = parser.parse_args()
 
