@@ -1,4 +1,5 @@
 {
+    "diagnostic.checkCurrentLine": true,
     "snippets.priority": 100,
     "snippets.loadFromExtensions": false,
     "snippets.snipmate.enable": false,
